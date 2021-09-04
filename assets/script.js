@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     setInterval(function () {
     //
-    const date = new Date();
+    const date = newDate();
     
     //get month
     const month = date.getMonth() + 1;
@@ -24,18 +24,16 @@ const seconds = date.getSeconds();
 const formattedTime = `${month}/${day}/${year}/ ${hour}:${minutes}:${seconds}`; 
 $("#time").text(formattedTime);
 }, 1000);
-
-/* If the time block is in the past the time block 
-is gray, if the time block is in the present the color is red, 
-if the time block is in the future the color is red. */
+// setting the date and time variables
 const date = NewDate();
-
+const currentHour = moment().hours();
+// parsing info from the html document
 $(".time-block").each(function(time) {
     const id = $(this).attr("id");
     const currentHour = parseInt(id.split("-").pop());
     date.getHours();
 
-
+// Background colors will change with corresponding colors
     if (currentHour === date.getHours()) {
         //  current hour will be have a light background
         //  select only
@@ -54,20 +52,21 @@ $(".time-block").each(function(time) {
         // saving data on refresh
         }
 });
+// accessing the local storage 
 const userDescriptionInput = document.querySelector("#description");
 const saveButton = document.querySelectorAll(".saveBtn");
 
-$(".saveBtn").on("click", function (event) {
-    event.preventDefault();
-//Create user object for submission 
+$(".saveBtn").click(function() {
+
+    //Create user object for submission 
     const notes = $(this).siblings(".description").val()
-    const numHr = $(this).parent().attr("id")
+    const numHr = $(this).parent().attr(".id")
     
     localStorage.setItem(numHr, notes)
     
-    }
+}
 )
-    document.getElementById("description").innerHTML = localStorage.getItem(this);
+document.getElementById("description").innerHTML = localStorage.getItem(this);
 //Submission to local storage
 
 console.log(localStorage.setItem(userDescriptionInput))
