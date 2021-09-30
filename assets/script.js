@@ -15,12 +15,12 @@ const year =  date.getFullYear();
 
 
 // hour 
-const hour = date.getHours();
+let hour = date.getHours();
 // get minutes
-const minutes = date.getMinutes();
+let minutes = date.getMinutes();
 
 //seconds
-const seconds = date.getSeconds();
+let seconds = date.getSeconds();
 // var hours = date.getMinutes();
 if (hour > 12) { hour -= 12 }
 
@@ -34,12 +34,13 @@ const formattedTime = `${month}/${day}/${year}/ ${hour}:${minutes}:${seconds}`;
 $("#time").text(formattedTime);
 }, 1000);
 // setting the date and time variables
-const newDate = NewDate();
+// const newDate = NewDate();
 const currentHour = moment().hours();
 // parsing info from the html document
 $(".time-block").each(function(time) {
     const id = $(this).attr("id");
     const currentHour = parseInt(id.split("-").pop());
+    const date = new Date();
     date.getHours();
 
 // Background colors will change with corresponding colors
@@ -55,11 +56,11 @@ $(".time-block").each(function(time) {
         $(this).find("textarea").addClass("bg-success text-black");
     }
 
-    if(data[id]) {
+//     if(data[id]) {
 //  input text
-        $(this).find("textarea").val(data[id]);
-        // saving data on refresh
-        }
+//         $(this).find("textarea").val(data[id]);
+        // Load data on refresh
+        // }
 });
 // accessing the local storage 
 const userDescriptionInput = document.querySelector("#description");
