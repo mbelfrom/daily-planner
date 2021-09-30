@@ -24,7 +24,7 @@ Homework assignment 4 is Daily Planner t built with HTML,CSS, Javascript, and th
 ## Images
 ---
 
-
+![Daily Planner](./assets/images/daily-planner.PNG)
 
 
 
